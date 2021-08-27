@@ -1,0 +1,199 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: "Noto Sans KR", sans-serif;
+  background-image: url("https://image.tving.com/upload/fe/highlight/2021/0827/20210827112357banner_image_url_u.jpg");
+  height: 1000px;
+}
+
+button {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  left: -9999px;
+}
+
+.home-header {
+  border-bottom: 1px solid rgba(35, 35, 35, 0.2);
+  background: rgba(21, 21, 21, 0.55);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.header-box:first-child {
+  background: rgba(15, 15, 15, 0.2);
+}
+
+.header-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.header-wrap > ul {
+  display: flex;
+}
+
+.header-box:first-child .header-wrap {
+  height: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.wrap-miniNav > li + li::before {
+  content: "";
+  display: inline-block;
+  background-color: #8f8f8a;
+  width: 1px;
+  height: 9px;
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
+.wrap-miniNav > li:nth-child(2) {
+  position: relative;
+}
+
+.wrap-miniNav > li > a {
+  color: #8f8f8a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.wrap-miniNav > li > a:hover {
+  color: #fafafa;
+}
+
+.voucher {
+  width: 109px;
+  height: 118px;
+  background: rgba(30, 30, 30, 0.93);
+  padding: 10px 0;
+  border-radius: 4px;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: 4px 4px 10px rgb(0 0 0 / 30%);
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  margin-left: -42px;
+  z-index: 9999;
+}
+
+.voucher li:hover {
+  background: #282828;
+}
+
+.voucher li:hover a {
+  color: #969696;
+}
+
+.voucher a {
+  font-size: 14px;
+  color: #737373;
+  font-weight: 500;
+}
+
+.header-box:last-child .header-wrap {
+  height: 77px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-box:last-child nav {
+  margin-left: 203px;
+}
+
+.header-box:last-child nav ul {
+  display: flex;
+}
+
+.header-box:last-child nav h2 a {
+  margin: 0 22px;
+  color: #e6e6e6;
+  font-size: 1.125rem;
+  font-weight: 500;
+  opacity: 0.9;
+  position: relative;
+}
+
+.header-box:last-child nav h2:first-child a::before {
+  background-image: url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAnCAMAAAB+DzuWAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAASFBMVEVHcEzX19fPz8/8/Pzk5OTOzs7Pz8/Ozs7Ozs7Pz8/////////////////////////////////////////////////Ozs7///+CAbPgAAAAFnRSTlMALn8WDu9gv8BPnWOuPIpP6tH+pt+9xggevgAAAAFiS0dECmjQ9FYAAAAHdElNRQflBRESBRY8GakRAAABKElEQVQ4y9WU4XKEIAyEQ0HkBAQRfP9HbQJ2qtOrhH/tzpwH536wgZsA3CU+5H0q4FFqOqaLReC0C1wIQbNnoHnEzzGH4Pm/fVz/l/PJr2d82dc063YwM8fdNCsEBvxIYB7cSytObaAxuQZzHC+WHeriBpDi+kHRxR8DQDX/YUAtSztc67xanWzDAKsjne+ugI/R18GWdsjJ4UjGtMqcSDE8A2vKuKRNWSBQ9n3v7SAyLVnSBgjY9zXcgPqoXnysIQTRAzCNwo8kIKM22QEoU0kFCIgIlE4NlN/VOrg1YKaYouoAFNadAJ3/0r5/raHdEAJ0aeBS8if4/uIgWJIHYetqyraEvv4c/sXfmw0MN4HhNkON7DXSyGgLvgwFGyBMi6INr90baveffegzxghcQ/kAAAAASUVORK5CYII=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  left: -32px;
+  top: 0px;
+}
+
+.header-wrap h1 {
+  width: 96px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA0MzIuMjUgOTcuNTMnPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J00yMDAuMyAwaDMwLjg0djk3LjUzSDIwMC4zek03Ni4wNSAwSDB2MjkuOTFoMjkuODZ2NjcuNTFoMzEuNzNWMjkuOTFoMjkuOTRMODEuOCA0YTYuMTcgNi4xNyAwIDAwLTUuNzUtNHptMjI2LjIgNDUuMDdsLTMzLjEtNDIuMTVhNy42MiA3LjYyIDAgMDAtNi0yLjkyaC0xOS4yOHY5Ny41MmgzMC41OFY1Mi40M2wzMy4wNiA0Mi4xNmE3LjYyIDcuNjIgMCAwMDYgMi45M2gxOS4zVjBoLTMwLjU2em0tMTQxLjYyLTQxbC0xNy44NSA0OS43OEwxMjUgNC4wOEE2LjE2IDYuMTYgMCAwMDExOS4yMiAwSDg5LjY1bDM3LjUzIDk3LjUyaDMxLjE5TDE5NS45MiAwaC0yOS41YTYuMTggNi4xOCAwIDAwLTUuNzkgNC4wN3pNNDMxLjUgNDIuNDJoLTM0LjYzdjI4LjJoLTIwLjRWMjcuOTNINDE2YTguMjggOC4yOCAwIDAwNy43Mi01LjM1TDQzMi4yNSAwaC04Ni42MnY5Ny41M2g4NS44N3onLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.header-wrap form {
+  width: 256px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 23px;
+}
+
+.header-wrap form input {
+  background: transparent;
+  height: 20px;
+  color: #fafafa;
+  font-size: 15px;
+}
+
+.header-wrap form input::placeholder {
+  font-size: 15px;
+  font-weight: 500;
+  color: #8f8f8a;
+}
+
+.header-wrap > button {
+  background-image: url("../img/search.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 15px;
+  top: 26px;
+}
+
+.hiding-search {
+  visibility: hidden;
+}
+
+.hiding {
+  display: none;
+}
