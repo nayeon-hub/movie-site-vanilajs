@@ -1,4 +1,5 @@
 const axios = require("axios");
+const upcomingList = [];
 
 const getUsers = () => {
   axios
@@ -8,15 +9,17 @@ const getUsers = () => {
     .then((response) => {
       const movieLists = response.data.results;
       Object.values(movieLists).forEach((ele) => {
-        console.log(
-          ele.title,
-          ele.id,
-          ele.genre_ids,
-          ele.overview,
-          ele.poster_path
-        );
+        upcomingList.push({
+          title: ele.title,
+          id: ele.id,
+          genre: ele.genre_ids,
+          overview: ele.overview,
+          poster: ele.poster_path,
+        });
       });
     })
     .catch((error) => console.error(error));
 };
 getUsers();
+
+export default upcomingList;
