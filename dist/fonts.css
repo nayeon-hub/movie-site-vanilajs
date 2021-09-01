@@ -1,0 +1,27 @@
+/* === Noto Sans KR - 500 */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-display: block;
+	src: url("./font/NotoSansKr-Medium.eot");
+	src: local('Noto Sans KR'),
+		url("./font/NotoSansKr-Medium.eot") format("embedded-opentype"),
+		url("./font/NotoSansKr-Medium.woff2") format("woff2"),
+		url("./font/NotoSansKr-Medium.woff") format("woff"),
+		url("./font/NotoSansKr-Medium.svg") format("svg");
+}
+
+/* === Noto Sans KR - 700 */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	font-display: block;
+	src: url("./font/NotoSansKr-Bold.eot");
+	src: local('Noto Sans KR'),
+		url("./font/NotoSansKr-Bold.eot") format("embedded-opentype"),
+		url("./font/NotoSansKr-Bold.woff2") format("woff2"),
+		url("./font/NotoSansKr-Bold.woff") format("woff"),
+		url("./font/NotoSansKr-Bold.svg") format("svg");
+}
