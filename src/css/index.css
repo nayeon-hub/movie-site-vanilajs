@@ -3,16 +3,18 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 body {
   width: 100%;
   font-family: "Noto Sans KR", sans-serif;
-  background-image: url("https://image.tving.com/upload/fe/highlight/2021/0827/20210827112357banner_image_url_u.jpg");
   height: 1000px;
+  background-color: #141414;
 }
 
-button {
+button,
+input {
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -26,6 +28,7 @@ button {
 
 .home-header {
   border-bottom: 1px solid rgba(35, 35, 35, 0.2);
+  /* background: #191919; */
   background: rgba(21, 21, 21, 0.55);
   position: fixed;
   top: 0px;
@@ -145,7 +148,8 @@ button {
   top: 0px;
 }
 
-.header-wrap h1 {
+.header-wrap h1 a {
+  display: inline-block;
   width: 96px;
   height: 30px;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA0MzIuMjUgOTcuNTMnPjxwYXRoIGZpbGw9JyNmZmYnIGQ9J00yMDAuMyAwaDMwLjg0djk3LjUzSDIwMC4zek03Ni4wNSAwSDB2MjkuOTFoMjkuODZ2NjcuNTFoMzEuNzNWMjkuOTFoMjkuOTRMODEuOCA0YTYuMTcgNi4xNyAwIDAwLTUuNzUtNHptMjI2LjIgNDUuMDdsLTMzLjEtNDIuMTVhNy42MiA3LjYyIDAgMDAtNi0yLjkyaC0xOS4yOHY5Ny41MmgzMC41OFY1Mi40M2wzMy4wNiA0Mi4xNmE3LjYyIDcuNjIgMCAwMDYgMi45M2gxOS4zVjBoLTMwLjU2em0tMTQxLjYyLTQxbC0xNy44NSA0OS43OEwxMjUgNC4wOEE2LjE2IDYuMTYgMCAwMDExOS4yMiAwSDg5LjY1bDM3LjUzIDk3LjUyaDMxLjE5TDE5NS45MiAwaC0yOS41YTYuMTggNi4xOCAwIDAwLTUuNzkgNC4wN3pNNDMxLjUgNDIuNDJoLTM0LjYzdjI4LjJoLTIwLjRWMjcuOTNINDE2YTguMjggOC4yOCAwIDAwNy43Mi01LjM1TDQzMi4yNSAwaC04Ni42MnY5Ny41M2g4NS44N3onLz48L3N2Zz4=");
@@ -180,7 +184,7 @@ button {
 }
 
 .header-wrap > button {
-  /* background-image: url("../img/search.png"); */
+  background-image: url("../img/search.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 24px;
@@ -188,6 +192,44 @@ button {
   position: absolute;
   right: 15px;
   top: 26px;
+}
+
+.banner {
+  height: 503px;
+  width: 100%;
+}
+
+.banner-item {
+  display: block;
+  height: 100%;
+  background-image: url("https://image.tving.com/upload/fe/highlight/2021/0831/20210831181849banner_image_url_u.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.banner-item-info {
+  display: inline-block;
+  margin-top: 375px;
+  color: #fafafa;
+}
+
+.btn {
+  width: 100px;
+  height: 36px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 34px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  color: hsla(0, 0%, 98%, 0.9);
+}
+
+.btn:hover {
+  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  color: hsla(0, 0%, 98%, 1);
 }
 
 .hiding-search {
