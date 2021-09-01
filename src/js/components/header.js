@@ -28,7 +28,8 @@ function headerTop() {
 }
 
 function headerBottom() {
-  const heading = document.createElement("h1");
+  const h1 = document.createElement("h1");
+  const a = document.createElement("a");
   const strong = document.createElement("strong");
   const nav = document.createElement("nav");
   const ul = document.createElement("ul");
@@ -40,8 +41,10 @@ function headerBottom() {
 
   strong.innerHTML = "TVING";
   strong.className = "sr-only";
-  heading.append(strong);
-  eleList.push(heading);
+  a.append(strong);
+  a.href = "/";
+  h1.append(a);
+  eleList.push(h1);
 
   navList.forEach((ele) => {
     const a = document.createElement("a");
@@ -63,48 +66,9 @@ function headerBottom() {
   return eleList;
 }
 
-const header = document.createElement("header");
-header.className = "home-header";
-header.append(headerBox(headerTop()));
-header.append(headerBox(headerBottom()));
+// const header = document.createElement("header");
+// header.className = "home-header";
+// header.append(headerBox(headerTop()));
+// header.append(headerBox(headerBottom()));
 
-// function showDrop() {
-//   const homeHeader = document.querySelector(".home-header");
-//   const miniNav = homeHeader.querySelector(".wrap-miniNav");
-//   const miniLists = miniNav.querySelectorAll("li");
-//   const overAnchor = miniLists[1].querySelector("a");
-//   const voucher = miniLists[1].querySelector(".voucher");
-
-//   // 이용권 메뉴 보여주기
-//   overAnchor.addEventListener("mouseover", () => {
-//     voucher.classList.remove("hiding");
-//     console.log(1);
-//   });
-
-//   voucher.addEventListener("mouseleave", () => {
-//     voucher.classList.add("hiding");
-//     console.log(2);
-//   });
-// }
-
-// function showSearch() {
-//   const homeHeader = document.querySelector(".home-header");
-//   const searchForm = homeHeader.querySelector("form");
-//   const searchInput = searchForm.querySelector("input");
-//   const searchBtn = homeHeader.querySelector(".search-btn");
-
-//   // 검색창 보여주기
-//   searchBtn.addEventListener("click", () => {
-//     searchForm.className = "";
-//   });
-
-//   searchInput.addEventListener("focusout", () => {
-//     searchForm.className = "hiding-search";
-//     console.log("hey");
-//   });
-// }
-
-// showSearch();
-// showDrop();
-
-export default header;
+export default [headerBox(headerTop()), headerBox(headerBottom())];
