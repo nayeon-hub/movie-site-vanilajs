@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -16,7 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/i,
@@ -34,22 +33,12 @@ module.exports = {
   devServer: {
     port: 9000,
     historyApiFallback: true,
-    publicPath: "/dist/",
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
     }),
-    new GoogleFontsPlugin({
-      fonts: [
-        {
-          family: "Noto Sans KR",
-          variants: ["500", "700"],
-          display: "block",
-        },
-      ],
-    }),
-    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
   ],
 };
