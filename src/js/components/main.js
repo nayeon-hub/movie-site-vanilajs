@@ -1,24 +1,36 @@
-import movie_list from "../movieAPI.js";
+const appDiv = document.getElementById("app");
 
-const div = document.createElement("div");
-div.className = "movie-list";
-const li = document.createElement("li");
-movie_list.forEach((ele) => {
-  li.innerHTML = `${Object.values(ele)[0]}`;
-  div.append(li);
-});
+function banner(title, id, path) {
+  const banner = document.createElement("div");
+  banner.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${path}`;
+  banner.className = "banner";
+  banner.innerHTML = `
+    <a href="/details" class="banner-item" data-link>
+    <p class="banner-item-info">
+    [✨상영 예정작] ${title}
+    </p>
+    <div class="btn">자세히보기</div>
+    </a>
+    `;
 
-const banner = `
-<div class="banner">
-<a href="/posts" class="banner-item" data-link>
-<p class="banner-item-info">
-[업데이트💡] 팀버튼 감독의 천재성을 지금 바로 확인하세요
-</p>
-<div class="btn">자세히보기</div>
-</a>
-</div>
-`;
+  appDiv.append(banner);
+}
 
-console.log(div);
+function movie(title, id, path) {
+  const div = document.createElement("div");
+  div.className = "movie-item";
+  const a = document.createElement("a");
+  a.href = `/details/${id}`;
+  const img = document.createElement("img");
+  img.src = `https://image.tmdb.org/t/p/original/${path}`;
+  img.alt = title;
+  a.append(img);
+  div.append(a);
 
-export default banner;
+  const span = document.createElement("span");
+  span.innerHTML = title;
+  div.append(span);
+  return div;
+}
+
+export { banner, movie };

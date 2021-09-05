@@ -1,6 +1,8 @@
 import "./js/movieAPI.js";
 import header_list from "./js/components/header.js";
-import banner from "./js/components/main.js";
+import { getBanner, getMovies } from "./js/movieAPI.js";
+import getInfo from "./js/miniRouter.js";
+
 import "./css/index.css";
 
 const navigateTo = (url) => {
@@ -9,14 +11,16 @@ const navigateTo = (url) => {
 };
 
 const router = async () => {
+  const id = window.location.pathname.split("/")[2];
   const routes = [
-    { path: "/", view: banner },
-    { path: "/posts", view: null },
+    { path: "/", view: getBanner(getMovies) },
+    { path: `/details/${id}`, view: getInfo() },
   ];
 
   const potentialMatches = routes.map((route) => {
     return {
       route: route,
+      // isMatch: location.pathname.split("/")[1] === route.path,
       isMatch: location.pathname === route.path,
     };
   });
@@ -31,10 +35,10 @@ const router = async () => {
       isMatch: true,
     };
   }
-  document.querySelector("#app").innerHTML = await match.route.view;
+  await match.route.view;
 };
 
-window.addEventListener("popstate", router);
+window.addEventListener("popstate", router());
 
 document.addEventListener("DOMContentLoaded", () => {
   // header

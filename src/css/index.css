@@ -197,15 +197,14 @@ input {
 .banner {
   height: 503px;
   width: 100%;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 50% 25%;
 }
 
 .banner-item {
   display: block;
   height: 100%;
-  background-image: url("https://image.tving.com/upload/fe/highlight/2021/0831/20210831181849banner_image_url_u.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   text-align: center;
 }
 
@@ -231,11 +230,25 @@ input {
   border: 1px solid hsla(0, 0%, 100%, 0.5);
   color: hsla(0, 0%, 98%, 1);
 }
-
+.movie-list {
+  color: white;
+}
 .hiding-search {
   visibility: hidden;
 }
 
 .hiding {
   display: none;
+}
+
+.movie-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movie-item img {
+  width: 186px;
+  height: 270px;
+  display: block;
 }

@@ -13,6 +13,7 @@ const getBanner = (cd) => {
       appDiv.innerHTML = "";
       banner(movieLists[2].title, movieLists[2].id, movieLists[2].poster_path);
       cd();
+      console.log("home");
     })
     .catch((error) => {
       console.error(error);
@@ -27,18 +28,16 @@ const getMovies = () => {
     .then((response) => {
       const movieLists = response.data.results;
       const appDiv = document.getElementById("app");
-      console.log(movieLists[1]);
+      const div = document.createElement("div");
+      div.className = "movie-list";
       Object.values(movieLists).forEach((ele) => {
-        movie(ele.title, ele.id, ele.poster_path, ele.vote_average);
+        div.append(movie(ele.title, ele.id, ele.poster_path));
       });
-      console.log(3);
+      appDiv.append(div);
     })
     .catch((error) => {
       console.error(error);
     });
 };
 
-const getMain = () => {
-  getBanner(getMovies);
-};
-export default getMain;
+export { getBanner, getMovies };
