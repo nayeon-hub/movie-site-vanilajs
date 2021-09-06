@@ -5,7 +5,7 @@ function banner(title, id, path) {
   banner.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${path}`;
   banner.className = "banner";
   banner.innerHTML = `
-    <a href="/details" class="banner-item" data-link>
+    <a href="/details/${id}" class="banner-item" data-link>
     <p class="banner-item-info">
     [✨상영 예정작] ${title}
     </p>

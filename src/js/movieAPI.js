@@ -9,11 +9,10 @@ const getBanner = (cd) => {
     .then((response) => {
       const movieLists = response.data.results;
       const appDiv = document.getElementById("app");
-      // console.log(appDiv);
       appDiv.innerHTML = "";
       banner(movieLists[2].title, movieLists[2].id, movieLists[2].poster_path);
       cd();
-      console.log("home");
+      console.log("home", 1);
     })
     .catch((error) => {
       console.error(error);
@@ -40,4 +39,8 @@ const getMovies = () => {
     });
 };
 
-export { getBanner, getMovies };
+const sumFunc = () => {
+  getBanner(getMovies);
+};
+
+export default sumFunc;

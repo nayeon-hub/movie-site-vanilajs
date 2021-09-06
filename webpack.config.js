@@ -10,6 +10,7 @@ module.exports = {
   output: {
     filename: "[name]__bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -20,8 +21,9 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 9000,
     historyApiFallback: true,
+    port: 9000,
+    static: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
