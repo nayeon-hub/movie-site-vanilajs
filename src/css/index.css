@@ -198,8 +198,7 @@ input {
   height: 503px;
   width: 100%;
   background-repeat: no-repeat;
-  background-size: 70%;
-  background-position: 50% 25%;
+  background-position: center;
 }
 
 .banner-item {
@@ -243,12 +242,31 @@ input {
 
 .movie-list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .movie-item img {
   width: 186px;
   height: 270px;
   display: block;
+}
+
+.movie-info {
+  color: #fff;
+}
+
+.movie-info img {
+  width: 205px;
+  height: 308px;
+}
+
+.movie-info h2 {
+  font-weight: 600;
+  font-size: 33px;
+  line-height: 43.57px;
+}
+
+.movie-info p {
+  width: 969px;
 }

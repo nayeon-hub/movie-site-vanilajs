@@ -16,9 +16,15 @@ function banner(title, id, path) {
   appDiv.append(banner);
 }
 
-function movie(title, id, path) {
+function movie(title, id, path, backPath) {
   const div = document.createElement("div");
   div.className = "movie-item";
+  const backDiv = document.createElement("div");
+  const backImg = document.createElement("img");
+  backImg.src = `https://image.tmdb.org/t/p/original/${backPath}`;
+  backDiv.append(backImg);
+  div.append(backDiv);
+
   const a = document.createElement("a");
   a.href = `/details/${id}`;
   const img = document.createElement("img");

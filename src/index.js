@@ -23,6 +23,8 @@ const router = async () => {
     };
   });
 
+  console.log(potentialMatches);
+
   let match = potentialMatches.find(
     (potentialMatches) => potentialMatches.isMatch
   );
