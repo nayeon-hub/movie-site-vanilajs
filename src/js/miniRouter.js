@@ -1,5 +1,6 @@
 const axios = require("axios");
 import hey from "./components/poster.js";
+import likeEvent from "./movieLike.js";
 
 const getInfo = async () => {
   const movieId = await location.pathname.split("/")[2];
@@ -11,7 +12,14 @@ const getInfo = async () => {
       const movie = response.data;
       const appDiv = document.getElementById("app");
       appDiv.innerHTML = "";
-      hey(movie.title, movie.overview, movie.popularity, movie.poster_path);
+      hey(
+        movie.title,
+        movie.overview,
+        movie.popularity,
+        movie.poster_path,
+        movie.backdrop_path
+      );
+      likeEvent();
     })
     .catch((error) => {
       console.error(error);

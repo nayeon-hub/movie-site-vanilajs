@@ -16,7 +16,6 @@ const getBanner = (cd) => {
         movieLists[2].backdrop_path
       );
       cd();
-      console.log("home", 1);
     })
     .catch((error) => {
       console.error(error);
@@ -34,9 +33,7 @@ const getMovies = () => {
       const div = document.createElement("div");
       div.className = "movie-list";
       Object.values(movieLists).forEach((ele) => {
-        div.append(
-          movie(ele.title, ele.id, ele.poster_path, ele.backdrop_path)
-        );
+        div.append(movie(ele.title, ele.id, ele.poster_path));
       });
       appDiv.append(div);
     })
