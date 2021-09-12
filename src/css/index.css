@@ -256,17 +256,70 @@ input {
   color: #fff;
 }
 
-.movie-info img {
+.info-background img {
+  height: 464px;
+}
+
+.info-content img {
   width: 205px;
   height: 308px;
 }
 
-.movie-info h2 {
+.info-content h2 {
   font-weight: 600;
   font-size: 33px;
   line-height: 43.57px;
 }
 
-.movie-info p {
+.info-content p {
   width: 969px;
+}
+
+.header-wrap form {
+  position: relative;
+}
+
+.title-list {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 254px;
+  min-height: 178px;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  background: #272726;
+  padding: 27px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 18px #0f0f0f;
+}
+
+.title-list a {
+  position: relative;
+  line-height: 140%;
+  color: white;
+}
+
+.title-list a + a {
+  margin-top: 10px;
+}
+
+.unlike-btn,
+.like-btn {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.unlike {
+  background-image: url("../img/heart_outline.png");
+}
+
+.like {
+  background-image: url("../img/heart_fill.png");
 }
