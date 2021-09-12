@@ -13,20 +13,28 @@ export default () => {
     searchForm.className = "";
   });
 
-  searchForm.addEventListener("blur", () => {
-    searchForm.className = "hiding-search";
-    div.remove();
-    console.log("hey");
+  searchInput.addEventListener("blur", (e) => {
+    const span = searchForm.querySelectorAll("span");
+    span.forEach((ele) => {
+      ele.addEventListener("click", (e) => {
+        console.log(e.target.innerHTML);
+      });
+    });
+    setTimeout(() => {
+      searchForm.className = "hiding-search";
+      div.remove();
+    }, 200);
   });
 
   searchInput.addEventListener("input", () => {
     getInfo(searchInput.value);
   });
 
-  function createBox(title) {
-    const span = document.createElement("span");
-    span.innerHTML = title;
-    return span;
+  function createBox(title, id) {
+    const a = document.createElement("a");
+    a.innerHTML = title;
+    a.href = `/details/${id}`;
+    return a;
   }
 
   const getInfo = async (value) => {
@@ -38,8 +46,9 @@ export default () => {
         const data = response.data.results;
         div.innerHTML = "";
         data.forEach((ele) => {
-          console.log(ele.title);
-          div.append(createBox(ele.title));
+          const a = createBox(ele.title, ele.id);
+          div.append(a);
+          console.log(a);
         });
         searchForm.append(div);
       })
