@@ -1,7 +1,7 @@
 const axios = require("axios");
 import likeEvent from "../function/likeEvent.js";
 
-function createPoster(title, overview, popularity, path, backPath) {
+function createPoster(title, overview, popularity, path, backPath, id) {
   const appDiv = document.getElementById("app");
   const template = `
   <div class="movie-info">
@@ -9,7 +9,7 @@ function createPoster(title, overview, popularity, path, backPath) {
     <img src = https://image.tmdb.org/t/p/original/${backPath}>
   </div>
   <div class="info-content">
-    <img src=https://image.tmdb.org/t/p/original/${path} alt="" />
+    <img src=https://image.tmdb.org/t/p/original/${path} alt="${title}" />
     <h2>${title}</h2>
     <span class="like-btn unlike"></span>
     <p>${overview}</p>
@@ -22,6 +22,7 @@ function createPoster(title, overview, popularity, path, backPath) {
 const getSingleMovie = async () => {
   const lc = await location.pathname.split("/");
   const movieId = lc[2];
+
   axios
     .get(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=cdf3f17915090757a86f6a63885f852e&language=en-US`
@@ -35,7 +36,8 @@ const getSingleMovie = async () => {
         movie.overview,
         movie.popularity,
         movie.poster_path,
-        movie.backdrop_path
+        movie.backdrop_path,
+        movie.id
       );
       likeEvent();
     })

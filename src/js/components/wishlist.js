@@ -1,15 +1,17 @@
 const axios = require("axios");
 import likeEvent from "../function/likeEvent.js";
 
-function miniMovie(title, path) {
+function createMiniMovie(title, path, id) {
   const listDiv = document.querySelector(".wishList");
   const movieItem = document.createElement("div");
   movieItem.className = "movie-item";
   const template = `
     <div class="item-content">
-      <img src=https://image.tmdb.org/t/p/original/${path} alt="" />
-      <h2>${title}</h2>
-      <span class="like-btn unlike"></span>
+      <a href="/details/${id}" data-link>
+        <img src=https://image.tmdb.org/t/p/original/${path} alt="" />
+        <h2>${title}</h2>
+      </a>
+      <span class="like-btn like"></span>
     </div>`;
   movieItem.innerHTML = template;
   listDiv.append(movieItem);
@@ -22,8 +24,7 @@ const getMovie = async (movieId) => {
     )
     .then((response) => {
       const movie = response.data;
-      miniMovie(movie.title, movie.poster_path);
-      // likeEvent();
+      createMiniMovie(movie.title, movie.poster_path, movie.id);
     })
     .catch((error) => {
       console.error(error);
@@ -39,4 +40,5 @@ export default () => {
   wishList.forEach((ele) => {
     getMovie(ele);
   });
+  likeEvent();
 };
