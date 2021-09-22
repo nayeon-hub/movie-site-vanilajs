@@ -42,6 +42,8 @@ const router = async () => {
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
+  let lsList = localStorage.getItem("movie");
+
   // header
   let header = document.querySelector("header");
   header.className = "home-header";
@@ -58,4 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   router();
+
+  if (lsList === null) {
+    localStorage.setItem("movie", JSON.stringify([]));
+  }
 });
