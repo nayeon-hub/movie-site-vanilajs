@@ -3,6 +3,7 @@ export default () => {
   const likeBtn = movieDiv.querySelector(".like-btn");
   const id = window.location.pathname.split("/")[2];
   const movieList = JSON.parse(localStorage.getItem("movie"));
+
   likeBtn.addEventListener("click", () => {
     if (likeBtn.classList[1] === "unlike") {
       likeBtn.className = "like-btn like";

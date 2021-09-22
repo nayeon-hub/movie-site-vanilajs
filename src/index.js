@@ -1,9 +1,8 @@
-import "./js/movieAPI.js";
 import header_list from "./js/components/header.js";
-import getHome from "./js/movieAPI.js";
-import getInfo from "./js/miniRouter.js";
-import miniEvent from "./js/miniEvent.js";
-import getWish from "./js/wishlist";
+import Home from "./js/components/home.js";
+import Poster from "./js/components/detail";
+import miniEvent from "./js/function/searchEvent.js";
+import Wishlist from "./js/components/wishlist.js";
 import "./css/index.css";
 
 const navigateTo = (url) => {
@@ -13,9 +12,9 @@ const navigateTo = (url) => {
 
 const router = async () => {
   const routes = [
-    { path: "", view: getHome },
-    { path: "details", view: getInfo },
-    { path: "wishlist", view: getWish },
+    { path: "", view: Home },
+    { path: "details", view: Poster },
+    { path: "wishlist", view: Wishlist },
   ];
 
   const potentialMatches = routes.map((route) => {
@@ -59,5 +58,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   router();
-  localStorage.setItem("movie", JSON.stringify([]));
 });

@@ -31,10 +31,4 @@ const header = `
         </div>
       </div>`;
 
-// const header = document.createElement("header");
-// header.className = "home-header";
-// header.append(headerBox(headerTop()));
-// header.append(headerBox(headerBottom()));
-
-// export default [headerBox(headerTop()), headerBox(headerBottom())];
 export default header;
