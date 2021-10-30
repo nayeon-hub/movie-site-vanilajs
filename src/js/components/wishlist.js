@@ -1,5 +1,5 @@
 const axios = require("axios");
-import likeEvent from "../function/likeEvent.js";
+import { detailPage, wishPage } from "../function/likeEvent.js";
 
 function createMiniMovie(title, path, id) {
   const listDiv = document.querySelector(".wishList");
@@ -33,6 +33,7 @@ const getMovie = async (movieId) => {
 
 export default () => {
   const appDiv = document.getElementById("app");
+  const movieList = JSON.parse(localStorage.getItem("movie"));
   appDiv.innerHTML = `<div class="wishList">
   <h2>Movie 위시리스트</h2>
   </div>`;
@@ -40,5 +41,5 @@ export default () => {
   wishList.forEach((ele) => {
     getMovie(ele);
   });
-  likeEvent();
+  wishPage(movieList);
 };

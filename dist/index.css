@@ -333,7 +333,7 @@ input {
 }
 
 .header-wrap > button {
-  background-image: url(/errf07128d73e7941c9dbf6.png);
+  background-image: url(/f07128d73e7941c9dbf6.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 24px;
@@ -422,5 +422,54 @@ input {
 
 .info-content p {
   width: 969px;
+}
+
+.header-wrap form {
+  position: relative;
+}
+
+.title-list {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 254px;
+  min-height: 178px;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+  background: #272726;
+  padding: 27px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 18px #0f0f0f;
+}
+
+.title-list a {
+  position: relative;
+  line-height: 140%;
+  color: white;
+}
+
+.title-list a + a {
+  margin-top: 10px;
+}
+
+.unlike-btn,
+.like-btn {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.unlike {
+  background-image: url(/b1bad37b41638a9c2935.png);
+}
+
+.like {
+  background-image: url(/e0156308139aea01cebf.png);
 }
 

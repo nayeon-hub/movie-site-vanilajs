@@ -32,6 +32,7 @@ function wishPage(movieList) {
     const parentDiv = e.target.parentNode;
     if (name === "like-btn") {
       const id = e.target.previousElementSibling.href.split("details/")[1];
+      console.log(e.target.previousElementSibling);
       const idx = movieList.indexOf(id);
       movieList.splice(idx, 1);
       localStorage.setItem("movie", JSON.stringify(movieList));
@@ -40,17 +41,17 @@ function wishPage(movieList) {
   });
 }
 
-function likeBtn() {
-  const pathCheck = window.location.pathname.split("/")[1];
-  const movieList = JSON.parse(localStorage.getItem("movie"));
+// function likeEvent() {
+//   const pathCheck = window.location.pathname.split("/")[1];
+//   const movieList = JSON.parse(localStorage.getItem("movie"));
 
-  if (pathCheck === "details") {
-    console.log("details");
-    detailPage(movieList);
-  } else if (pathCheck === "wishlist") {
-    console.log("wishlist");
-    wishPage(movieList);
-  }
-}
+//   if (pathCheck === "details") {
+//     console.log("details");
+//     detailPage(movieList);
+//   } else if (pathCheck === "wishlist") {
+//     console.log("wishlist");
+//     wishPage(movieList);
+//   }
+// }
 
-export default likeBtn;
+export { detailPage, wishPage };

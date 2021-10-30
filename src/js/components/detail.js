@@ -1,5 +1,5 @@
 const axios = require("axios");
-import likeEvent from "../function/likeEvent.js";
+import { detailPage, wishPage } from "../function/likeEvent.js";
 
 function createPoster(title, overview, popularity, path, backPath, id) {
   const appDiv = document.getElementById("app");
@@ -39,7 +39,8 @@ const getSingleMovie = async () => {
         movie.backdrop_path,
         movie.id
       );
-      likeEvent();
+      const movieList = JSON.parse(localStorage.getItem("movie"));
+      detailPage(movieList);
     })
     .catch((error) => {
       console.error(error);
