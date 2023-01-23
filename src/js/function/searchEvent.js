@@ -1,37 +1,38 @@
-export default () => {
-  const axios = require("axios");
-  const homeHeader = document.querySelector(".home-header");
-  const searchForm = homeHeader.querySelector("form");
-  const searchInput = searchForm.querySelector("input");
-  const searchBtn = homeHeader.querySelector(".search-btn");
+import axios from 'axios';
 
-  const div = document.createElement("div");
-  div.className = "title-list";
+export default () => {
+  const homeHeader = document.querySelector('.home-header');
+  const searchForm = homeHeader.querySelector('form');
+  const searchInput = searchForm.querySelector('input');
+  const searchBtn = homeHeader.querySelector('.search-btn');
+
+  const div = document.createElement('div');
+  div.className = 'title-list';
 
   // 검색창 보여주기
-  searchBtn.addEventListener("click", () => {
-    searchForm.className = "";
+  searchBtn.addEventListener('click', () => {
+    searchForm.className = '';
   });
 
-  searchInput.addEventListener("blur", (e) => {
-    const span = searchForm.querySelectorAll("span");
+  searchInput.addEventListener('blur', (e) => {
+    const span = searchForm.querySelectorAll('span');
     span.forEach((ele) => {
-      ele.addEventListener("click", (e) => {
+      ele.addEventListener('click', (e) => {
         console.log(e.target.innerHTML);
       });
     });
     setTimeout(() => {
-      searchForm.className = "hiding-search";
+      searchForm.className = 'hiding-search';
       div.remove();
     }, 200);
   });
 
-  searchInput.addEventListener("input", () => {
+  searchInput.addEventListener('input', () => {
     getInfo(searchInput.value);
   });
 
   function createBox(title, id) {
-    const a = document.createElement("a");
+    const a = document.createElement('a');
     a.innerHTML = title;
     a.href = `/details/${id}`;
     return a;
@@ -44,7 +45,7 @@ export default () => {
       )
       .then((response) => {
         const data = response.data.results;
-        div.innerHTML = "";
+        div.innerHTML = '';
         data.forEach((ele) => {
           const a = createBox(ele.title, ele.id);
           div.append(a);

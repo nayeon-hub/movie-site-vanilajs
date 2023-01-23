@@ -1,10 +1,10 @@
-const axios = require("axios");
-import { detailPage, wishPage } from "../function/likeEvent.js";
+import axios from 'axios';
+import { detailPage, wishPage } from '../function/likeEvent.js';
 
 function createMiniMovie(title, path, id) {
-  const listDiv = document.querySelector(".wishList");
-  const movieItem = document.createElement("div");
-  movieItem.className = "movie-item";
+  const listDiv = document.querySelector('.wishList');
+  const movieItem = document.createElement('div');
+  movieItem.className = 'movie-item';
   const template = `
     <div class="item-content">
       <a href="/details/${id}" data-link>
@@ -32,12 +32,12 @@ const getMovie = async (movieId) => {
 };
 
 export default () => {
-  const appDiv = document.getElementById("app");
-  const movieList = JSON.parse(localStorage.getItem("movie"));
+  const appDiv = document.getElementById('app');
+  const movieList = JSON.parse(localStorage.getItem('movie'));
   appDiv.innerHTML = `<div class="wishList">
   <h2>Movie 위시리스트</h2>
   </div>`;
-  const wishList = JSON.parse(localStorage.getItem("movie"));
+  const wishList = JSON.parse(localStorage.getItem('movie'));
   wishList.forEach((ele) => {
     getMovie(ele);
   });

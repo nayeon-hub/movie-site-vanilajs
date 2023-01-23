@@ -1,8 +1,8 @@
-const axios = require("axios");
-import { detailPage, wishPage } from "../function/likeEvent.js";
+import axios from 'axios';
+import { detailPage, wishPage } from '../function/likeEvent.js';
 
 function createPoster(title, overview, popularity, path, backPath, id) {
-  const appDiv = document.getElementById("app");
+  const appDiv = document.getElementById('app');
   const template = `
   <div class="movie-info">
   <div class="info-background">
@@ -20,7 +20,7 @@ function createPoster(title, overview, popularity, path, backPath, id) {
 }
 
 const getSingleMovie = async () => {
-  const lc = await location.pathname.split("/");
+  const lc = await location.pathname.split('/');
   const movieId = lc[2];
 
   axios
@@ -29,8 +29,8 @@ const getSingleMovie = async () => {
     )
     .then((response) => {
       const movie = response.data;
-      const appDiv = document.getElementById("app");
-      appDiv.innerHTML = "";
+      const appDiv = document.getElementById('app');
+      appDiv.innerHTML = '';
       createPoster(
         movie.title,
         movie.overview,
@@ -39,7 +39,7 @@ const getSingleMovie = async () => {
         movie.backdrop_path,
         movie.id
       );
-      const movieList = JSON.parse(localStorage.getItem("movie"));
+      const movieList = JSON.parse(localStorage.getItem('movie'));
       detailPage(movieList);
     })
     .catch((error) => {
